@@ -1,0 +1,11 @@
+Nom du sujet : Application de contrôle continu
+
+Description du sujet : Afin d'aider les étudiants à travailler régulièrement, 
+nous souhaitons développer une application web leur proposant chaque jour une 
+dizaine de questions aléatoires tirées d'un ensemble de questions saisies par 
+les enseignants. L'idée est que les questions soient rapides (type questions de cours, 
+1 minute max par question) afin qu'en une dizaine de minutes l'étudiant ait fait ce travail. 
+Les thématiques pourront être différentes à chaque question, pour couvrir l'ensemble des modules.
+
+Le paramétrage de l'application devra permettre de sélectionner les questions à prendre en compte 
+pour s'adapter aux différents semestres et de faire des bilans (par étudiant, par module...).
