@@ -9,3 +9,7 @@ Les thématiques pourront être différentes à chaque question, pour couvrir l'
 
 Le paramétrage de l'application devra permettre de sélectionner les questions à prendre en compte 
 pour s'adapter aux différents semestres et de faire des bilans (par étudiant, par module...).
+
+Github : https://github.com/FlorianLandry/controle-continu-web.git
+
+Trello : https://trello.com/invite/b/n0QODlH4/062b7d7da95c26b915109c948cbb8e6b/controle-continu-web
