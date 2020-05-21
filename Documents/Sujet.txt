@@ -13,3 +13,16 @@ pour s'adapter aux différents semestres et de faire des bilans (par étudiant, 
 Github : https://github.com/FlorianLandry/controle-continu-web.git
 
 Trello : https://trello.com/invite/b/n0QODlH4/062b7d7da95c26b915109c948cbb8e6b/controle-continu-web
+
+Notes d'appel :
+	- Application web php et js
+	- Connexion
+	- QCM connaissances générales
+	- Interface : pas 10 questions en même temps, chacune séparée pour les partager sur la journée
+	- Choix ou pas choix ? Plutôt pas choix.
+	- Administrateur du site important qui va choisir les modules
+	- Totalement aléatoire pour l'éudiant ducoup
+	- Questions pouvant être données plusieurs fois
+		--> Pondération des probabilités en fonction de la réussite ?
+	- TROIS connexions différentes : étudiant/prof/admin
+	- Imaginer avec jeux de données différents ? (par exemple pour une équation qui ne sera pas toujours la même)
