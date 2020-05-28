@@ -14,6 +14,9 @@ Github : https://github.com/FlorianLandry/controle-continu-web.git
 
 Trello : https://trello.com/invite/b/n0QODlH4/062b7d7da95c26b915109c948cbb8e6b/controle-continu-web
 
+Sketchboard : https://sketchboard.me/BCaaibNEdzms
+Si le lien ne fonctionne pas, je devrais pouvoir ajouter des personnes pour la collaboration avec une adresse mail
+
 Notes d'appel :
 	- Application web php et js
 	- Connexion
