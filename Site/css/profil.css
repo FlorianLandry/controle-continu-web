@@ -1,0 +1,17 @@
+.lien-deconnexion {
+    color: #F2D57E;
+    float: right;
+    margin-right: 2.5vw;
+}
+
+h3 {
+    color: #D9A566;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.titre-page, .nom, .informations {
+    margin-left: 2.5vw;
+}

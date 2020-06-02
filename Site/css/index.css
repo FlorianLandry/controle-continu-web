@@ -1,0 +1,20 @@
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header #image-accueil{
+    width: 2cm;
+}
+
+header a{
+    color: #D9A566;
+}
+
+header a:hover{
+    color: #B36A8F;
+}
+
+.lien-navigation {
+    margin: 0 1vw;
+}

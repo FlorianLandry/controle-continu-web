@@ -1,0 +1,34 @@
+.formulaire-inscription div{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulaire-inscription .style label{
+    color: #F2D57E;
+    text-align: justify;
+    padding: 20px;
+}
+
+.formulaire-inscription .style input{
+    width: 15vw;
+    /* margin: 20px; */
+}
+
+.formulaire-inscription *{
+    align-self: center;
+}
+
+.formulaire-inscription .style .erreur{
+    color: red;
+    font-size: small;
+    padding: 0px;
+}
+
+.formulaire-inscription .style .bouton{
+    width: 7.5vw;
+    margin: 20px;
+}
+
+.formulaire-inscription .style .compte{
+    padding-bottom: 20px;
+}

@@ -1,0 +1,46 @@
+.formulaire-connexion {
+    display: flex;
+    flex-direction: column;
+}
+
+.critere {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulaire-connexion * {
+    align-self: center;
+}
+
+.formulaire-connexion label {
+    color: #F2D57E;
+    padding: 20px;
+}
+
+.formulaire-connexion input {
+    width: 200px;
+}
+
+#se-souvenir {
+    width: auto;
+}
+
+.formulaire-connexion button {
+    width: 100px;
+    margin: 1%;
+}
+
+.formulaire-connexion a {
+    margin-bottom: 1%;
+}
+
+.formulaire-connexion .critere .erreur{
+    color: red;
+    font-size: small;
+    padding: 0px;
+}
+
+.formulaire-connexion .inscription-valide{
+    color: lime;
+    font-size: small;
+}
