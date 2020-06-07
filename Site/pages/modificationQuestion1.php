@@ -22,7 +22,39 @@ if(isset($_SESSION['id'])){
         echo "ACCES INTERDIT";
     }
     elseif ($_SESSION['statut'] == 'prof'){
-        echo "ACCES AUTORISE";
+        include("../scripts/recuperer-module.php");
+        include("../scripts/recuperer-question-prof.php");
+        $question = recupererQuestion($_POST['id_question']);
+        $question = $question['0'];
+        ?>
+        <form action="../scripts/modification-question.php" method="post">
+            <label for="intitule">Intitulé de la question : </label>
+            <input type="text" name="intitule" id="intitule" value="<?= $question['intitule'] ?>">
+            <label for="module">Module : </label>
+            <select name="module" id="module">
+                <?php
+                foreach (recupererModule() as $modules){
+                    echo "<option value=\"".$modules['nom_module']."\">".$modules['nom_module']."</option>";
+                }
+                ?>
+            </select>
+            <label for="semestre">Semestre : </label>
+            <select name="semestre" id="semestre" >
+                <?php
+                for($i = 1; $i <= 4; $i++){
+                    echo "<option value=\"".$i."\">".$i."</option>";
+                }
+                ?>
+            </select>
+            <label for="nombre_reponse">Nombre de réponses à cette quesstion (entre 2 et 8) : </label>
+            <input type="number" name="nombre_reponse" id="nombre_reponse" value="<?= $question['nombre_reponse'] ?>" min="2" max="8">
+            <label for="affichage_correction">Afficher la correction : </label>
+            <input type="checkbox" name="affichage_correction" id="affichage_correction">
+            <input type="hidden" name="id_question" id="id_question" value="<?= $_POST['id_question']?>">
+            <input type="submit" value="Continuer à la création des réponses">
+        </form>
+        <a href="./accueil.php"><input type="button" value="Annuler"></a>
+        <?php
     }
     elseif ($_SESSION['statut'] == 'admin'){
         echo "ACCES INTERDIT";

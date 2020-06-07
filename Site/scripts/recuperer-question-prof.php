@@ -20,10 +20,10 @@ function recupererQuestions($id_prof){
 return $answer;
 }
 
-function recupererDerniereQuestionCreee(){
+function recupererQuestion($id_question){
     global $db;
     $answer = array();
-    $sql_command = "SELECT * FROM question";
+    $sql_command = "SELECT * FROM question WHERE id_question=".$id_question;
 
     foreach ($db->query($sql_command) as $tab) {
         $answer[0] = array(
@@ -32,11 +32,34 @@ function recupererDerniereQuestionCreee(){
             'nombre_reponse' => $tab['nombre_reponse'],
             'affichage_correction' => $tab['affichage_correction'],
             'module' => $tab['module'],
-            'semestre' => $tab['semestre']
+            'semestre' => $tab['semestre'],
+            'id_prof' => $tab['id_prof']
         );
     }
+    return $answer;
+}
 
+function recupererDerniereQuestionCreee(){
+    global $db;
+    $answer = array();
+    $sql_command1 = "SELECT MAX(id_question) AS max FROM question";
+    $req = $db->query($sql_command1);
+    $res = $req->fetch();
+    $max = $res['max'];
 
+    $sql_command2 = "SELECT * FROM question WHERE id_question = ".$max;
+
+    foreach ($db->query($sql_command2) as $tab) {
+        $answer[0] = array(
+            'id_question' => $tab['id_question'],
+            'intitule' => $tab['intitule'],
+            'nombre_reponse' => $tab['nombre_reponse'],
+            'affichage_correction' => $tab['affichage_correction'],
+            'module' => $tab['module'],
+            'semestre' => $tab['semestre'],
+            'id_prof' => $tab['id_prof']
+        );
+    }
     return $answer;
 }
 ?>

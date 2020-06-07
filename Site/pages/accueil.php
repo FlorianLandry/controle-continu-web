@@ -42,8 +42,10 @@
                     $html .= "</p>";
                     $html .= "<p> Module : ".$questions['module']."</p>";
                     $html .= "<p> Semestre : ".$questions['semestre']. "ème</p>";
-                    $html .= "</div>";
-                    $html .= "<hr>";
+                    $html .= "<form action=\"./modificationQuestion1.php\" method=\"post\">";
+                    $html .= "<input type=\"hidden\" id=\"id_question\" name=\"id_question\" value=\"".$questions['id_question']."\">";
+                    $html .= "<input type=\"submit\" value=\"Modifier la question\">";
+                    $html .= "</form></div><hr>";
                     echo $html;
                 }
                 ?>

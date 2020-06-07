@@ -20,6 +20,9 @@
     $ajoutQuestion->bindParam(':module', $question['module'], PDO::PARAM_STR);
     $ajoutQuestion->bindParam(':semestre', $question['semestre'], PDO::PARAM_INT);
     $ajoutQuestion->bindParam(':nombre_reponse', $question['nombre_reponse'], PDO::PARAM_INT);
+    if(empty($question['affichage_correction'])){
+        $question['affichage_correction'] = 0;
+    }
     $ajoutQuestion->bindParam(':affichage_correction', $question['affichage_correction'], PDO::PARAM_BOOL);
     $ajoutQuestion->execute();
 

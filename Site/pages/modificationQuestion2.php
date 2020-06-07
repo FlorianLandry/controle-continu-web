@@ -22,7 +22,30 @@ if(isset($_SESSION['id'])){
         echo "ACCES INTERDIT";
     }
     elseif ($_SESSION['statut'] == 'prof'){
-        echo "ACCES AUTORISE";
+        include("../scripts/recuperer-question-prof.php");
+        include("../scripts/recuperer-reponse.php");
+        $questions = recupererQuestion($_GET['id_question']);
+        $question = $questions['0'];
+        if($question['id_prof'] == $_SESSION['id']){
+            $reponses = recupererReponses($_GET['id_question']);
+            $html = "<div class=\"question\">";
+            $html .= "<h1>Intitulé : ".$question['intitule']."</h1>";
+            $html .= "<form action=\"../scripts/modification-reponses.php\" method=\"post\">";
+            $html .= "<input type=\"hidden\" name=\"id_question\" id=\"id_question\" value=\"".$question['id_question']."\">";
+            echo $html;
+            for($i = 1; $i <= $question['nombre_reponse']; $i++){
+                echo "<input type=\"hidden\" id=\"id_reponse".$i."\" name=\"id_reponse".$i."\" value=\"".$reponses[$i]['id_reponse']."\">";
+                echo "<label for=\"texte_reponse".$i."\">Réponse N°".$i."</label>";
+                echo "<input type=\"text\" name=\"texte_reponse".$i."\" id=\"texte_reponse".$i."\" value=\"".$reponses[$i]['texte_reponse']."\">";
+                echo "<label for=\"juste".$i."\">Juste</label>";
+                echo "<input type=\"checkbox\" name=\"juste".$i."\" id=\"juste".$i."\" unchecked>";
+            }
+            echo "<input type=\"hidden\" name=\"nombre_reponse\" id=\"nombre_reponse\" value=\"".$question['nombre_reponse']."\">";
+            echo "<input type=\"submit\" value=\"Finaliser la modification des réponses\"></form></div><hr>";
+        }else{
+            echo "<p>IL NE FAUT PAS CHANGER LA VALEUR DANS L'URL POUR ACCEDER AUX QUESTIONS D'AUTRES PROFESSUERS. C'EST MAL.</p>";
+        }
+
     }
     elseif ($_SESSION['statut'] == 'admin'){
         echo "ACCES INTERDIT";
