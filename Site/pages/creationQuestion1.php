@@ -48,8 +48,9 @@
                 <label for="affichage_correction">Afficher la correction : </label>
                 <input type="checkbox" name="affichage_correction" id="affichage_correction">
                 <input type="submit" value="Continuer à la création des réponses">
+                <a href="./accueil.php"><input type="button" value="Annuler"></a>
             </form>
-            <a href="./accueil.php"><input type="button" value="Annuler"></a>
+
             <?php
         }
         elseif ($_SESSION['statut'] == 'admin'){

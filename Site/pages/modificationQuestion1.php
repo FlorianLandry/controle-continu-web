@@ -51,9 +51,10 @@ if(isset($_SESSION['id'])){
             <label for="affichage_correction">Afficher la correction : </label>
             <input type="checkbox" name="affichage_correction" id="affichage_correction">
             <input type="hidden" name="id_question" id="id_question" value="<?= $_POST['id_question']?>">
-            <input type="submit" value="Continuer à la création des réponses">
+            <input type="submit" value="Continuer à la modification des réponses">
+            <a href="./accueil.php"><input type="button" value="Annuler"></a>
         </form>
-        <a href="./accueil.php"><input type="button" value="Annuler"></a>
+
         <?php
     }
     elseif ($_SESSION['statut'] == 'admin'){

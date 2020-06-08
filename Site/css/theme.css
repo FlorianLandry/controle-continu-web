@@ -1,11 +1,13 @@
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     background-color: #101C31;
     overflow-y: fragments;
     overflow-x: hidden;
+    color : #F2D57E;
 }
 
 a{
@@ -14,9 +16,6 @@ a{
 
 a:hover{
     color: #B36A8F;
-}
-* {
-    box-sizing: border-box;
 }
 
 h1, h2, h4{
@@ -27,4 +26,13 @@ p{
     color: #F2D57E;
     text-align: justify;
     padding: 20px;
+}
+
+form{
+	text-align: center;
+	display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

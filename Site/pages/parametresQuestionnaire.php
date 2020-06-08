@@ -26,7 +26,7 @@
         }
         elseif ($_SESSION['statut'] == 'admin'){
             include("../scripts/recuperer-module.php");
-            echo "<p>Module.s évalué.s : </p><form action=\"../scripts/modification-parametres-questionnaire.php\" method=\"post\">";
+            echo "<form action=\"../scripts/modification-parametres-questionnaire.php\" method=\"post\"><p>Module.s évalué.s : </p>";
             echo "<select id=\"module\" name=\"module\"><option value=\"Tous\">Tous</option>";
             foreach (recupererModule() as $modules){
                 echo "<option value=\"".$modules['nom_module']."\">".$modules['nom_module']."</option>";
