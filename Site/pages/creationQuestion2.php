@@ -30,10 +30,10 @@ if(isset($_SESSION['id'])){
         $html .= "<input type=\"hidden\" name=\"id_question\" id=\"id_question\" value=\"".$questions[0]['id_question']."\">";
         echo $html;
         for($i = 1; $i <= $questions[0]['nombre_reponse']; $i++){
-            echo "<label for=\"texte_reponse".$i."\">Réponse N°".$i."</label>";
+            echo "<div class=\"checkbox\"><label for=\"texte_reponse".$i."\">Réponse N°".$i."</label>";
             echo "<input type=\"text\" name=\"texte_reponse".$i."\" id=\"texte_reponse".$i."\">";
             echo "<label for=\"juste".$i."\">Juste</label>";
-            echo "<input type=\"checkbox\" name=\"juste".$i."\" id=\"juste".$i."\" unchecked>";
+            echo "<input type=\"checkbox\" name=\"juste".$i."\" id=\"juste".$i."\" unchecked></div>";
         }
         echo "<input type=\"hidden\" name=\"nombre_reponse\" id=\"nombre_reponse\" value=\"".$questions[0]['nombre_reponse']."\">";
         echo "<input type=\"submit\" value=\"Finaliser la création des réponses\"></form></div><hr>";

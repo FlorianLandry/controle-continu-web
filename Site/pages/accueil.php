@@ -41,7 +41,6 @@
                     }
                     $html .= "</p>";
                     $html .= "<p> Module : ".$questions['module']."</p>";
-                    $html .= "<p> Semestre : ".$questions['semestre']. "ème</p>";
                     $html .= "<form action=\"./modificationQuestion1.php\" method=\"post\">";
                     $html .= "<input type=\"hidden\" id=\"id_question\" name=\"id_question\" value=\"".$questions['id_question']."\">";
                     $html .= "<input type=\"submit\" value=\"Modifier la question\">";
@@ -58,7 +57,6 @@
                 echo "<h1>Paramètres Actuels</h1>";
                 $parametres = recupererParametresQuestionnaire();
                 ?>
-                <p>Semestre testé : <?= $parametres['semestre']?> </p>
                 <p>Modules testés : <?= $parametres['module']?> </p>
                 <hr>
                 <p>Pour modifier les paramètres du questionnaire, veuillez cliquer sur le bouton ci-dessous : </p>

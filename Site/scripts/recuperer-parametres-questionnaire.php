@@ -8,8 +8,7 @@ function recupererParametresQuestionnaire(){
     foreach ($db->query($sql_command) as $tab) {
         $answer = array(
             'id_questionnaire' => $tab['id_questionnaire'],
-            'module' => $tab['module'],
-            'semestre' => $tab['semestre']
+            'module' => $tab['module']
         );
     }
     return $answer;

@@ -36,3 +36,17 @@ form{
     margin-right: auto;
     width: 50%;
 }
+
+.espace{
+    padding: 10px;
+}
+
+form .checkbox{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+form .checkbox label{
+    padding: 10px;
+}

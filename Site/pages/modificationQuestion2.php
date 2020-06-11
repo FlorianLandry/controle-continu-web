@@ -34,11 +34,11 @@ if(isset($_SESSION['id'])){
             $html .= "<input type=\"hidden\" name=\"id_question\" id=\"id_question\" value=\"".$question['id_question']."\">";
             echo $html;
             for($i = 1; $i <= $question['nombre_reponse']; $i++){
-                echo "<input type=\"hidden\" id=\"id_reponse".$i."\" name=\"id_reponse".$i."\" value=\"".$reponses[$i]['id_reponse']."\">";
+                echo "<div class=\"checkbox\"><input type=\"hidden\" id=\"id_reponse".$i."\" name=\"id_reponse".$i."\" value=\"".$reponses[$i]['id_reponse']."\">";
                 echo "<label for=\"texte_reponse".$i."\">Réponse N°".$i."</label>";
                 echo "<input type=\"text\" name=\"texte_reponse".$i."\" id=\"texte_reponse".$i."\" value=\"".$reponses[$i]['texte_reponse']."\">";
                 echo "<label for=\"juste".$i."\">Juste</label>";
-                echo "<input type=\"checkbox\" name=\"juste".$i."\" id=\"juste".$i."\" unchecked>";
+                echo "<input type=\"checkbox\" name=\"juste".$i."\" id=\"juste".$i."\" unchecked></div>";
             }
             echo "<input type=\"hidden\" name=\"nombre_reponse\" id=\"nombre_reponse\" value=\"".$question['nombre_reponse']."\">";
             echo "<input type=\"submit\" value=\"Finaliser la modification des réponses\"></form></div><hr>";

@@ -3,7 +3,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Tourisme Matane</title>
+        <title>I-U-Training</title>
         <link rel="stylesheet" href="../css/index.css">
         <link rel="stylesheet" href="../css/theme.css">
         <link rel="stylesheet" href="../css/inscription.css">

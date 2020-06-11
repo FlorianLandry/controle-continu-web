@@ -32,11 +32,6 @@
                 echo "<option value=\"".$modules['nom_module']."\">".$modules['nom_module']."</option>";
             }
             echo "</select>";
-            echo "<p> Semestre.s évalué.s : </p><select id=\"semestre\" name=\"semestre\">";
-            for($i = 1; $i <= 4; $i++){
-                echo "<option value=\"".$i."\">".$i."</option>";
-            }
-            echo "</select>";
             echo "<p>Cliquez ci-dessous pour valider.</p><input type=\"submit\" value=\"Valider\"></form>";
         }
         else {

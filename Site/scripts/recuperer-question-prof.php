@@ -12,8 +12,7 @@ function recupererQuestions($id_prof){
             'intitule' => $tab['intitule'],
             'nombre_reponse' => $tab['nombre_reponse'],
             'affichage_correction' => $tab['affichage_correction'],
-            'module' => $tab['module'],
-            'semestre' => $tab['semestre']
+            'module' => $tab['module']
         );
         $i++;
     }
@@ -32,7 +31,6 @@ function recupererQuestion($id_question){
             'nombre_reponse' => $tab['nombre_reponse'],
             'affichage_correction' => $tab['affichage_correction'],
             'module' => $tab['module'],
-            'semestre' => $tab['semestre'],
             'id_prof' => $tab['id_prof']
         );
     }
@@ -56,7 +54,6 @@ function recupererDerniereQuestionCreee(){
             'nombre_reponse' => $tab['nombre_reponse'],
             'affichage_correction' => $tab['affichage_correction'],
             'module' => $tab['module'],
-            'semestre' => $tab['semestre'],
             'id_prof' => $tab['id_prof']
         );
     }
