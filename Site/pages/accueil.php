@@ -28,7 +28,10 @@
             }
             elseif ($_SESSION['statut'] == 'prof'){
                 include('../scripts/recuperer-question-prof.php');
+                include('../scripts/recuperer-module.php');
                 foreach (recupererQuestions($_SESSION['id']) as $questions){
+                    $module = recupererNomModule($questions['id_module']);
+                    $module = $module[0]['nom_module'];
                     $html = "<div class=\"question\">";
                     $html .= "<h1>Intitulé : ".$questions['intitule']."</h1>";
                     $html .= "<p> Nombre de réponses : ".$questions['nombre_reponse']."</p>";
@@ -40,7 +43,7 @@
                         $html .= "non";
                     }
                     $html .= "</p>";
-                    $html .= "<p> Module : ".$questions['module']."</p>";
+                    $html .= "<p> Module : ".$module."</p>";
                     $html .= "<form action=\"./modificationQuestion1.php\" method=\"post\">";
                     $html .= "<input type=\"hidden\" id=\"id_question\" name=\"id_question\" value=\"".$questions['id_question']."\">";
                     $html .= "<input type=\"submit\" value=\"Modifier la question\">";
@@ -53,11 +56,14 @@
                 <?php
             }
             elseif ($_SESSION['statut'] == 'admin'){
-                include('../scripts/recuperer-parametres-questionnaire.php');
-                echo "<h1>Paramètres Actuels</h1>";
-                $parametres = recupererParametresQuestionnaire();
+                include('../scripts/recuperer-module.php');
+                echo "<h1>Paramètres Actuels</h1><p>Modules testés :<br>";
+                foreach (recupererModulesEvalues() as $modules){
+                    $module = recupererNomModule($modules['id_module']);
+                    echo $module[0]['nom_module']."; <br>";
+                }
                 ?>
-                <p>Modules testés : <?= $parametres['module']?> </p>
+                </p>
                 <hr>
                 <p>Pour modifier les paramètres du questionnaire, veuillez cliquer sur le bouton ci-dessous : </p>
                 <a href="./parametresQuestionnaire.php"><input type="button" value="Modifier les paramètres"></a>

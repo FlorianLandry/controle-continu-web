@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php include("header.php");
-include("../scripts/recuperer-question-prof.php")?>
+?>
 <hr/>
 <h1>I-U-Training</h1>
 <p>Bienvenue sur la suite de la partie création des questions ! Vous devez maintenant renseigner les réponses possibles à votre question.</p>
@@ -23,6 +23,7 @@ if(isset($_SESSION['id'])){
         echo "ACCES INTERDIT";
     }
     elseif ($_SESSION['statut'] == 'prof'){
+        include("../scripts/recuperer-question-prof.php");
         $questions = recupererDerniereQuestionCreee();
         $html = "<div class=\"question\">";
         $html .= "<h1>Intitulé : ".$questions[0]['intitule']."</h1>";

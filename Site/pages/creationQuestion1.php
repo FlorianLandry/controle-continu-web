@@ -28,10 +28,10 @@
                 <label class="espace" for="intitule">Intitulé de la question : </label>
                 <input class="espace" type="text" name="intitule" id="intitule" value="null">
                 <label class="espace" for="module">Module : </label>
-                <select class="espace" name="module" id="module">
+                <select class="espace" name="id_module" id="id_module">
                     <?php
                     foreach (recupererModule() as $modules){
-                        echo "<option value=\"".$modules['nom_module']."\">".$modules['nom_module']."</option>";
+                        echo "<option value=\"".$modules['id_module']."\">".$modules['nom_module']."</option>";
                     }
                     ?>
                 </select>

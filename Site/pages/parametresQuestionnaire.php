@@ -27,11 +27,10 @@
         elseif ($_SESSION['statut'] == 'admin'){
             include("../scripts/recuperer-module.php");
             echo "<form action=\"../scripts/modification-parametres-questionnaire.php\" method=\"post\"><p>Module.s évalué.s : </p>";
-            echo "<select id=\"module\" name=\"module\"><option value=\"Tous\">Tous</option>";
             foreach (recupererModule() as $modules){
-                echo "<option value=\"".$modules['nom_module']."\">".$modules['nom_module']."</option>";
+                echo "<div class='checkbox'><label class='espace' for='evaluation_module".$modules['id_module']."'>".$modules['nom_module']."</label>";
+                echo "<input class='espace' type='checkbox' id='evaluation_module".$modules['id_module']."' name='evaluation_module".$modules['id_module']."' unchecked></div>";
             }
-            echo "</select>";
             echo "<p>Cliquez ci-dessous pour valider.</p><input type=\"submit\" value=\"Valider\"></form>";
         }
         else {
