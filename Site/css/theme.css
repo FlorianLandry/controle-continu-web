@@ -50,3 +50,10 @@ form .checkbox{
 form .checkbox label{
     padding: 10px;
 }
+
+.question{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 10px;
+}

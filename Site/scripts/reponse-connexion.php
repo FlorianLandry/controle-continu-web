@@ -34,6 +34,7 @@
             $_SESSION['nom'] = $utilisateur['nom'];
             $_SESSION['mail'] = $utilisateur['mail'];
             $_SESSION['statut'] = $utilisateur['statut'];
+            $_SESSION['questionnaire_charge'] = 0;
             if (isset($_SESSION['id']))
 		    {
 			    echo '<a href="profil.php">Mon profil</a>';

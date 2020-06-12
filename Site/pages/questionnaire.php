@@ -19,7 +19,22 @@
 <?php
 if(isset($_SESSION['id'])){
     if($_SESSION['statut'] == 'etudiant'){
-        echo "ACCES AUTORISE";
+        include('../scripts/recuperer-question-etudiant.php');
+        if($_SESSION['questionnaire_charge'] == 0){
+            $_SESSION['questions'] = recupererIDQuestionsAleatoires();
+            $_SESSION['questionnaire_charge'] = 1;
+        }
+
+        for($i = 0; $i < 10; $i++){
+            $id = $_SESSION['questions'][$i];?>
+            <div class="question">
+                <form action="question.php" method="get">
+                    <input type="hidden" id="id_question" name="id_question" value="<?= $id ?>">
+                    <input type="submit" value="Question N°<?= $i+1 ?>">
+                </form>
+            </div>
+        <?php
+        }
     }
     elseif ($_SESSION['statut'] == 'prof'){
         echo "ACCES INTERDIT";
