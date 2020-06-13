@@ -12,6 +12,13 @@ include('../scripts/connexion.php');
     <base target="_parent">
     <title>I-U-Training</title>
 
+    <script type="text/javascript">
+	setTimeout(function (){
+			document.forms['formulaire-reponse-question'].submit();
+		},60000);
+	</script>
+
+
 </head>
 <body>
 <hr/>
@@ -27,7 +34,7 @@ if(isset($_SESSION['id'])){
         $questions = recupererQuestion($_GET['id_question']);
         $html = "<div class=\"question\">";
         $html .= "<h1>Intitulé : ".$questions[0]['intitule']."</h1>";
-        $html .= "<form action=\"../scripts/verification-reponse.php\" method=\"post\">";
+        $html .= "<form name=\"formulaire-reponse-question\" action=\"../scripts/verification-reponse.php\" method=\"post\">";
         $html .= "<input type=\"hidden\" name=\"id_question\" id=\"id_question\" value=\"".$questions[0]['id_question']."\">";
         echo $html;
         $i = 1;
